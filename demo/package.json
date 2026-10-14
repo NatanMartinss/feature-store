@@ -1,0 +1,10 @@
+{
+  "name": "feature-store-demo",
+  "private": true,
+  "type": "module",
+  "description": "Simulation behind the interactive demo at https://natanmartins.com.br/projects/feature-store/",
+  "engines": { "node": ">=22.6" },
+  "scripts": {
+    "test": "node --experimental-strip-types --no-warnings --test *.test.ts"
+  }
+}
