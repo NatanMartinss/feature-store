@@ -35,7 +35,10 @@ test('the leaky model looks perfect offline and collapses in production', () => 
   assert.ok(r.latest.production < 0.65, `leaky production ${r.latest.production}`);
 });
 
-test('the point-in-time model reports the same score offline and in production', () => {
+// Verdadeiro por construção: com point-in-time, offline e produção usam as mesmas features nas
+// mesmas linhas. Isso demonstra a ausência de skew, mas não mede deriva no tempo; a avaliação
+// num período posterior ao treino está no roteiro.
+test('point-in-time: no training/serving gap (true by construction), and it beats the leaky model in production', () => {
   const r = runExperiment(4000, 7);
   assert.ok(Math.abs(r.pit.offline - r.pit.production) < 0.02);
   assert.ok(r.pit.production > r.latest.production + 0.15);

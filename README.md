@@ -45,6 +45,7 @@ flowchart LR
 - The registry entry is illustrative; no Feast server sits behind this page.
 
 ### Not built yet (roadmap)
+- [ ] Out-of-time evaluation: score “production” on a later cohort instead of the same test rows (today the point-in-time offline/production match is true by construction)
 - [ ] Feast repository with offline (Parquet/DuckDB) and online (Redis) stores
 - [ ] Materialisation job in Airflow
 - [ ] Online/offline consistency check with Great Expectations
